@@ -11,7 +11,11 @@ export function LoginLogout() {
       <h2>Authentication Status</h2>
       {authorized
         ? <LogOut />
-        : 'You are NOT logged in...'}
+        : <>
+          <LogIn />
+          <SignUp />
+        </>
+      }
     </>
   );
 }

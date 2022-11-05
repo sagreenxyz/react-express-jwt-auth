@@ -10,8 +10,6 @@ function App() {
       <h1>React Express Authentication/Authorization Example</h1>
       <AuthContextProvider>
         <LoginLogout />
-        <SignUp />
-        <LogIn />
       </AuthContextProvider>
     </div>
   );
