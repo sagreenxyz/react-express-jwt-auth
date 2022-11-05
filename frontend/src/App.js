@@ -3,7 +3,7 @@ import { useState, createContext, useContext } from 'react'
 const AuthContext = createContext()
 
 function AuthContextProvider({ children }) {
-  const [authorized, setAuthorized] = useState(true)
+  const [authorized, setAuthorized] = useState(false)
   return (
     <AuthContext.Provider value={{ authorized, setAuthorized }}>
       {children}
@@ -11,7 +11,8 @@ function AuthContextProvider({ children }) {
   )
 }
 
-function AuthStatus({ authorized }) {
+function AuthStatus() {
+  const { authorized } = useContext(AuthContext)
   return (
     <>
       <h2>Authentication Status</h2>
