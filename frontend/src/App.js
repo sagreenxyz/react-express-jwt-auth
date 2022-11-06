@@ -1,7 +1,7 @@
-import { AuthContextProvider } from './components/AuthContext'
-import { LogIn } from './components/LogIn';
-import { LogOut } from './components/LogOut';
-import { SignUp } from './components/SignUp';
+import { AuthContextProvider } from './components/authorization/AuthContext'
+import { LogIn } from './components/authorization/LogIn';
+import { LogOut } from './components/authorization/LogOut';
+import { SignUp } from './components/authorization/SignUp';
 import {
   BrowserRouter as Router,
   Routes,
