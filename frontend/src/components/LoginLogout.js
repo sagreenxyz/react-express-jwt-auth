@@ -8,7 +8,6 @@ export function LoginLogout() {
   const { authorized } = useContext(AuthContext);
   return (
     <>
-      <h2>Authentication Status</h2>
       {authorized
         ? <LogOut />
         : <>

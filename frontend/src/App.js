@@ -1,17 +1,25 @@
 import { AuthContextProvider } from './components/AuthContext'
-import { LoginLogout } from './components/LoginLogout'
-import { LogIn } from './components/LogIn'
-import { LogOut } from './components/LogOut'
-import { SignUp } from './components/SignUp'
+import { LogIn } from './components/LogIn';
+import { LogOut } from './components/LogOut';
+import { SignUp } from './components/SignUp';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <Router>
       <h1>React Express Authentication/Authorization Example</h1>
       <AuthContextProvider>
-        <LoginLogout />
+        <Routes>
+          <Route path="/" element={<LogIn />} />
+          <Route path="/authorized" element={<LogOut />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
       </AuthContextProvider>
-    </div>
+    </Router>
   );
 }
 

@@ -1,12 +1,18 @@
 import { useContext } from 'react';
 import { AuthContext } from './AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 export function LogIn() {
   const { setAuthorized } = useContext(AuthContext);
+  const navigate = useNavigate()
   const onSubmitHandler = e => {
     e.preventDefault();
     setAuthorized(true);
+    navigate('/authorized')
   };
+  const onNewUserClickHandler = () => {
+    navigate('/signup')
+  }
   return (
     <>
       <h2>Log In</h2>
@@ -21,6 +27,7 @@ export function LogIn() {
         </div>
         <input type="submit" value="Log In" />
       </form>
+      <button onClick={onNewUserClickHandler}>New User</button>
     </>
   );
 }
